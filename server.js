@@ -14,18 +14,19 @@ const db = mysql.createConnection({
 
 // connect to db and launch inquirer function
 db.connect(err => {
-    if (err) console.log(err);
-    console.log(`Connected to the employees_db database.`)
+    if (err) console.table(err);
+    console.table(`Connected to the employees_db database.`)
     init();
 });
 
 // Initialized inquirer with a list of prompts to help guide the user
 function init() {
-    console.log('Inquirer will start now')
+    console.table('Inquirer will start now')
     inquirer.prompt({
         type: 'list',
         message: 'What would you like to do?',
-        choices: [
+        choices: 
+        [
         'View All Departments', 
         'View All Roles', 
         'View All Employees', 
@@ -40,7 +41,7 @@ function init() {
         'Delete Role',
         'Delete Employee',
         'Exit'
-    ],
+        ],
         name: 'init'
     })
     .then (answer => {
