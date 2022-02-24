@@ -21,7 +21,6 @@ db.connect(err => {
 
 // Initialized inquirer with a list of prompts to help guide the user
 function init() {
-    console.table('Inquirer will start now')
     inquirer.prompt({
         type: 'list',
         message: 'What would you like to do?',
@@ -90,5 +89,35 @@ function init() {
                 console.table('Thank you for using Employee Tracker!')
             break;
         }
+    })
+}
+
+const viewAllDepartments = () => {
+    db.query('SELECT department_name FROM employees_db.department', (err, result) => {
+        if (err) {
+            console.table(err);
+        }
+        console.table(result);
+        init();
+    })
+}
+
+const viewAllRoles = () => {
+    db.query('SELECT title, salary FROM employees_db.role', (err, result) => {
+        if (err) {
+            console.table(err);
+        }
+        console.table(result);
+        init();
+    })
+}
+
+const viewAllEmployees = () => {
+    db.query('SELECT employee.id, employee.first_name , employee.last_name, role.title, department.department_name , role.salary , employee.manager_id FROM employee JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id;', (err, result) => {
+        if (err) {
+            console.table(err);
+        }
+        console.table(result);
+        init();
     })
 }
