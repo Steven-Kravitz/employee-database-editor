@@ -54,9 +54,6 @@ function init() {
             case 'View All Employees':
                 viewAllEmployees();
             break;
-            case '':
-                ();
-            break;
             case 'Add A Department':
                 addDepartment();
             break;
@@ -86,6 +83,10 @@ function init() {
             break;
             case 'Delete Employee':
                 deleteEmployee();
+            break;
+            case 'Exit':
+                db.end()
+                console.table('Thank you for using Employee Tracker!')
             break;
         }
     })
