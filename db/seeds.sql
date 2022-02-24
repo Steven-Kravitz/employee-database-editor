@@ -1,3 +1,5 @@
+USE employees_db;
+
 INSERT INTO department(department_name)
 VALUES 
 ('Game Design'), 
