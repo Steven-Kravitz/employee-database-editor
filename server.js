@@ -206,10 +206,10 @@ const addRole = async () => {
                 message: 'Which department is this role a part of? 1: Game Design 2: Game Balance 3: Marketing 4: Art 5: Admin 6: Data' 
             }
         ])
-        // console.log(question)
-        db.query('INSERT INTO role SET title = ?, salary = ?, department_id = ?', [question.title, question.salary, question.departmentId])
+        // console.log(question) title = ?, salary = ?, department_id = ?
+        db.query('INSERT INTO role SET ?', { title: question.title, salary: question.salary, department_id: question.departmentId })
         console.table('Role Successfully Added!')
-        init();
+        init()
     } catch (err) {
         console.table(err)
         init()
