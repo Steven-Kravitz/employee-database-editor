@@ -11,12 +11,12 @@ This app allows users to view a mySQL database for their company's employee rost
 - [Features](#features)
 
 ## Installation
-clone the repo from github and run npm i
+Clone the repo from github and run npm i
 
 ## Usage
 In the user's terminal, run server.js at which point everything will be prompted to the user via inquirer.
 
-[![Video Walkthrough](assets\READMEVideo.gif)]
+[![Video Walkthrough](assets\READMEVideo.gif)](https://drive.google.com/file/d/1hL_3EIUkQUTIWRGASymejADgTlm5bD-7/view)
 
 ## License
 This project is licensed under the MIT license.
